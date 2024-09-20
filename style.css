@@ -1,0 +1,139 @@
+body {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color:#fff;
+}
+
+.Parts {
+  max-width: 100%;
+  padding: 40px 0;
+  background-color: #F8F1EA;
+  ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.Partners {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 1400px;
+  max-width: 1380px;
+}
+
+.slides {
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+  gap: 20px;
+}
+
+.slide {
+  min-width: 150px;
+  padding: 0 20px;
+}
+
+.slide img {
+  width: 100%;
+  max-width: 150px;
+}
+
+h2{
+  text-transform: uppercase;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+button img {
+  width: 40px;
+  height: auto;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+/* Footer styling */
+footer {
+  background-color: #35312D;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.pip {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.social {
+  width: 250px;
+}
+
+div.social {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.social img:hover {
+  transform: scale(1.2);
+  transition-duration: 1000ms;
+}
+
+h6,
+h5 {
+  color: aliceblue;
+}
+
+h5 {
+  font-size: 23px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+li:hover {
+  transform: scale(1.1);
+  transition-duration: 1000ms;
+}
+
+li {
+  list-style: none;
+}
+
+li h3 a {
+  color: aliceblue;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+ul {
+  width: 300px;
+  padding: 0;
+}
