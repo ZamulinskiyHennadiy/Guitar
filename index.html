@@ -13,7 +13,7 @@
     rel="stylesheet">
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' style='background:black'><text y='16' font-family='Trebuchet MS' font-weight='900' fill='orange'>GZ</text></svg>">
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
   <script src="script.js" defer></script>
   <title>Guitar shop</title>
@@ -21,25 +21,128 @@
 
 <body>
 
-  <article class="Parts">
+  <header class="home" id="home">
+    <nav class="head">
+      <img src="emblem/logo.svg">
+      <ul class="start">
+        <li>
+          <h3><a href="#Home">Home</a></h3>
+        </li>
+        <li>
+          <h3><a href="#Catalog">Catalog</a></h3>
+        </li>
+        <li>
+          <h3><a href="#News">News</a></h3>
+        </li>
+        <li>
+          <h3><a href="#Contacts">Contacts</a></h3>
+        </li>
+      </ul>
+      <div class="kk">
+        <img src="local/search-icon.svg">
+        <img src="local/profile-icon.svg">
+      </div>
+    </nav>
+    <div class="bigslider">
+      <div class="bigsliders">
+
+        <div class="slidek" id="slide1">
+          <img src="image/image.png" alt="Картинка 1">
+          <div class="caption">
+            <h1>Discover new options</h1>
+            <a href="#" class="btn">View more</a>
+          </div>
+        </div>
+
+        <div class="slidek" id="slide2">
+          <img src="image/image2.png" alt="Картинка 2">
+          <div class="caption">
+            <h1>Expand your horizons</h1>
+            <a href="#" class="btn">View more</a>
+          </div>
+        </div>
+
+        <div class="slidek" id="slide3">
+          <img src="image/image3.png" alt="Картинка 3">
+          <div class="caption">
+            <h>Find Your Own Style</h>
+            <a href="#" class="btn">View more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="indicators">
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+  </header>
+
+  <article class="Catalog" id="Catalog">
+    <h2>new arrivals</h2>
+    <div class="cards">
+      <button class="previ"><img src="small/prev.svg"></button>
+      <div class="guiters">
+        <div class="card">
+          <span>in stock</span>
+          <div class="slideg"><img src="small/photo.png" alt="photo"></div>
+          <h4>Hagstrom Alvar Limited Edition</h4>
+          <p>€2.990,00</p>
+        </div>
+        <div class="card">
+          <span>in stock</span>
+          <div class="slideg"><img src="small/photo2.png" alt="photo2"></div>
+          <h4>Hagstrom Tremar Viking Deluxe Cloudy Seas</h4>
+          <p>€1.300,00</p>
+        </div>
+        <div class="card">
+          <span>sold</span>
+          <div class="slideg"> <img src="small/photo3.png" alt="photo3"></div>
+          <h4>Gibson Les Paul Standard 60s</h4>
+          <p>€3.749,00</p>
+        </div>
+        <div class="card">
+          <span>in stock</span>
+          <div class="slideg"><img src="small/photo4.png" alt="photo4"></div>
+          <h4>Suhr Standard Plus Trans Blue Denim</h4>
+          <p>€3.449,00</p>
+        </div>
+        <div class="card">
+          <span>in stock</span>
+          <div class="slideg"><img src="small/photo5.png" alt="photo5"></div>
+          <h4>Fender Telecaster Black Paisley Limited Edition</h4>
+          <p>€1.499,00</p>
+        </div>
+      </div>
+      <button class="nexti"><img src="small/next.svg"></button>
+    </div>
+    <div class="b"><a href="#" class="btn">View more</a></div>
+  </article>
+
+  <article class="Parts" id="News">
     <h2>Our Partners</h2>
     <div class="Partners">
       <button class="prev"><img src="small/prev.svg"></button>
       <div class="slides">
         <div class="slide"><img src="emblem/epiphone.svg" alt="epiphone"></div>
-        <div class="slide"> <img src="emblem/esp.svg"></div>
-        <div class="slide"><img src="emblem/gibson.svg"></div>
-        <div class="slide"><img src="emblem/engl.svg"></div>
-        <div class="slide"><img src="emblem/roland.svg"></div>
-        <div class="slide"> <img src="emblem/fender.svg"></div>
-        <div class="slide"><img src="emblem/peavey.svg"></div>
-        <div class="slide"><img src="emblem/marshal.svg"></div>
-        <div class="slide"> <img src="emblem/orange.svg"></div>
+        <div class="slide"> <img src="emblem/esp.svg" alt="esp"></div>
+        <div class="slide"><img src="emblem/gibson.svg" alt="gibson"></div>
+        <div class="slide"><img src="emblem/engl.svg" alt="engl"></div>
+        <div class="slide"><img src="emblem/roland.svg" alt="roland"></div>
+        <div class="slide"> <img src="emblem/fender.svg" alt="fender"></div>
+        <div class="slide"><img src="emblem/peavey.svg" alt="peavey"></div>
+        <div class="slide"><img src="emblem/marshal.svg" alt="marshal"></div>
+        <div class="slide"> <img src="emblem/orange.svg" alt="orange"></div>
       </div>
       <button class="next"><img src="small/next.svg"></button>
     </div>
   </article>
-  <footer>
+
+  <footer id="Contacts">
     <section class="finish">
       <nav>
         <img src="emblem/logo2.svg">
@@ -59,6 +162,7 @@
         </ul>
       </nav>
     </section>
+
     <div class="pip">
       <h6>© Copyright 2022. All rights reserved.</h6>
     </div>
@@ -74,6 +178,7 @@
       <h5>0800 300 4040</h5>
     </section>
   </footer>
+
 </body>
 
 </html>

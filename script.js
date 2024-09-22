@@ -1,70 +1,104 @@
-const slidesContainer = document.querySelector('.slides');
+document.addEventListener('DOMContentLoaded', function () {
+  // Слайдер для блоку guiters
+  const guitersContainer = document.querySelector('.guiters');
+  const nextGuitersBtn = document.querySelector('.nexti');
+  const prevGuitersBtn = document.querySelector('.previ');
+  let guitersIndex = 0;
+  let guitersSlides = document.querySelectorAll('.guiters .card');
+
+  function updateGuitersWidth() {
+    // Оновлення ширини картки на випадок зміни розміру екрану
+    return guitersSlides[0].clientWidth;
+  }
+
+  function moveGuitersToNext() {
+    const guitersSlideWidth = updateGuitersWidth();
+    if (guitersIndex < guitersSlides.length - 1) {
+      guitersIndex++;
+    } else {
+      guitersIndex = 0;
+    }
+    guitersContainer.style.transform = `translateX(-${guitersIndex * guitersSlideWidth}px)`;
+  }
+
+  function moveGuitersToPrev() {
+    const guitersSlideWidth = updateGuitersWidth();
+    if (guitersIndex > 0) {
+      guitersIndex--;
+    } else {
+      guitersIndex = guitersSlides.length - 1;
+    }
+    guitersContainer.style.transform = `translateX(-${guitersIndex * guitersSlideWidth}px)`;
+  }
+
+  nextGuitersBtn.addEventListener('click', moveGuitersToNext);
+  prevGuitersBtn.addEventListener('click', moveGuitersToPrev);
+
+  // Динамічне оновлення розмірів на зміну розміру екрану
+  window.addEventListener('resize', function () {
+    guitersContainer.style.transform = `translateX(-${guitersIndex * updateGuitersWidth()}px)`;
+  });
+
+  // Слайдер для блоку slides (партнери)
+  const slidesContainer = document.querySelector('.slides');
+  const nextSlidesBtn = document.querySelector('.next');
+  const prevSlidesBtn = document.querySelector('.prev');
+  let slidesIndex = 0;
+  let slideElements = document.querySelectorAll('.slides .slide');
+
+  function updateSlideWidth() {
+    // Оновлення ширини слайду партнерів
+    return slideElements[0].clientWidth;
+  }
+
+  function moveSlidesToNext() {
+    const slideWidth = updateSlideWidth();
+    if (slidesIndex < slideElements.length - 1) {
+      slidesIndex++;
+    } else {
+      slidesIndex = 0;
+    }
+    slidesContainer.style.transform = `translateX(-${slidesIndex * slideWidth}px)`;
+  }
+
+  function moveSlidesToPrev() {
+    const slideWidth = updateSlideWidth();
+    if (slidesIndex > 0) {
+      slidesIndex--;
+    } else {
+      slidesIndex = slideElements.length - 1;
+    }
+    slidesContainer.style.transform = `translateX(-${slidesIndex * slideWidth}px)`;
+  }
+
+  nextSlidesBtn.addEventListener('click', moveSlidesToNext);
+  prevSlidesBtn.addEventListener('click', moveSlidesToPrev);
+
+  // Динамічне оновлення ширини слайдів на зміну розміру екрану
+  window.addEventListener('resize', function () {
+    slidesContainer.style.transform = `translateX(-${slidesIndex * updateSlideWidth()}px)`;
+  });
+});
+
 let currentIndex = 0;
-let slideInterval;
-const slideWidth = document.querySelector('.slide').clientWidth + 40;
+const slides = document.querySelectorAll('.slidek');
+const dots = document.querySelectorAll('.dot');
 
-// Функція, яка переміщує перший слайд в кінець
-function moveToEnd() {
-  const firstSlide = slidesContainer.querySelector('.slide');
-  slidesContainer.appendChild(firstSlide);
-  slidesContainer.style.transition = 'none';
-  slidesContainer.style.transform = `translateX(0px)`;
-  setTimeout(() => {
-    slidesContainer.style.transition = 'transform 0.5s ease-in-out';
-  }, 10);
+function showSlide(index) {
+    const sliderWidth = document.querySelector('.bigslider').clientWidth;
+    document.querySelector('.bigsliders').style.transform = `translateX(${-index * sliderWidth}px)`;
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
 }
 
-// Функція показу наступного слайду
 function nextSlide() {
-  currentIndex++;
-  slidesContainer.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
-
-  if (currentIndex >= slidesContainer.children.length - 1) {
-    setTimeout(moveToEnd, 500);
-    currentIndex = 0;
-  }
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
 }
 
-// Функція показу попереднього слайду
-function prevSlide() {
-  currentIndex--;
-  if (currentIndex < 0) {
-    const lastSlide = slidesContainer.querySelector('.slide:last-child');
-    slidesContainer.prepend(lastSlide);
-    slidesContainer.style.transition = 'none';
-    slidesContainer.style.transform = `translateX(${-slideWidth}px)`;
-    setTimeout(() => {
-      slidesContainer.style.transition = 'transform 0.5s ease-in-out';
-      slidesContainer.style.transform = `translateX(0px)`;
-    }, 50);
-    currentIndex = 0;
-  } else {
-    slidesContainer.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
-  }
+function currentSlide(index) {
+    currentIndex = index;
+    showSlide(index);
 }
 
-// Функція для автоматичної прокрутки
-
-
-function stopSlideShow() {
-  clearInterval(slideInterval);
-}
-
-document.querySelector('.prev').addEventListener('click', () => {
-  stopSlideShow();
-  prevSlide();
-  startSlideShow();
-});
-
-document.querySelector('.next').addEventListener('click', () => {
-  stopSlideShow();
-  nextSlide();
-  startSlideShow();
-});
-
-window.addEventListener('load', startSlideShow);
-
-window.addEventListener('resize', () => {
-  slidesContainer.style.transform = `translateX(0px)`;
-  currentIndex = 0;
-});
+setInterval(nextSlide, 3000);  // Автоматична зміна слайдів кожні 3 секунди

@@ -1,20 +1,277 @@
 body {
   max-width: 1400px;
   margin: 0 auto;
-  background-color:#fff;
+  background-color: #fff;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100%;
 }
 
+.bigslider {
+  width: 100%;
+  max-width: 1000px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+
+.bigsliders {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  max-width: 2400px;
+  height: 100%;
+}
+
+.slidek {
+  min-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.slidek img {
+  width: 100%;
+  height: auto;
+}
+
+
+.caption {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  text-align: right;
+}
+
+.caption h2 {
+  font-size: 3em;
+  margin: 0;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.indicators {
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+nav.head {
+  display: flex;
+  background-color: #F8F1EA;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
+}
+
+div.kk {
+  width: 200px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+ul.start {
+  width: 1400px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 0px;
+  gap: 20px;
+}
+
+header>nav>ul>li a {
+  color: rgb(6, 6, 6);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+header>nav>ul>li:hover {
+  background-color: #F16A50;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  header {
+    width: 100%;
+  }
+}
+
+/* Повернутися і зробити бургер*/
+@media (max-width: 320px) {
+  header {
+    width: 100%;
+    gap: 10px;
+  }
+}
+
+/*Частина з гітарами */
+.guiters {
+  width: 1400px;
+  height: 450px;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  justify-content: center;
+}
+
+span {
+  background-color: #F16A50;
+  font-size: 17px;
+  border-radius: 1px;
+  text-align: center;
+  color: #fff;
+  width: 80px;
+  height: 30px;
+  right: 50px;
+}
+
+h4 {
+  width: 200px;
+  height: 10px;
+  font-size: 17px;
+  border-radius: 1px;
+  display: flex;
+  text-align: center;
+}
+
+p {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 2px;
+}
+
+.card {
+  width: 242px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+  min-width: 250px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .card {
+    display: flex;
+    width: 700px;
+  }
+}
+
+@media (max-width: 320px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.previ {
+  left: 0;
+}
+
+.nexti {
+  right: 0;
+}
+
+.b {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 40px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ffffffe0;
+  color: rgb(5, 5, 5);
+  padding: 10px 50px;
+  text-decoration: none;
+  font-size: 25px;
+  border-radius: 1px;
+  text-align: center;
+  border: 2px solid #050505;
+}
+
+.btn:hover {
+  background-color: #F16A50;
+  border: 2px solid #050505;
+  color: #F8F1EA;
+}
+
+/*Partners*/
 .Parts {
   max-width: 100%;
   padding: 40px 0;
   background-color: #F8F1EA;
-  ;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
+
+@media (max-width: 768px) {
+  .Parts {
+    width: 100%;
+    ;
+  }
+}
+
+@media (max-width: 320px) {
+  .Parts {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 
 .Partners {
   display: flex;
@@ -25,6 +282,26 @@ body {
   width: 1400px;
   max-width: 1380px;
 }
+
+@media (max-width: 768px) {
+  .Partners {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    align-items: flex-start
+  }
+}
+
+
+@media (max-width: 320px) {
+  .Partners {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 
 .slides {
   display: flex;
@@ -43,10 +320,21 @@ body {
   max-width: 150px;
 }
 
-h2{
+h1 {
+  width: 250px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+}
+
+h2 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
   text-transform: uppercase;
 }
 
+/*Кнопки */
 button {
   position: absolute;
   top: 50%;
@@ -63,7 +351,7 @@ button img {
 }
 
 .prev {
-  left: 0;
+  left: 0px;
 }
 
 .next {
@@ -81,6 +369,28 @@ footer {
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  footer {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: flex-start
+  }
+}
+
+
+@media (max-width: 320px) {
+  footer {
+    display: flex;
+    text-align: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    height: 700px;
+  }
+}
+
 .pip {
   width: 300px;
   height: 300px;
@@ -89,8 +399,42 @@ footer {
   justify-content: space-around;
 }
 
+@media (max-width: 768px) {
+  .pip {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    align-items: flex-start
+  }
+}
+
+
+@media (max-width: 320px) {
+  .pip {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 .social {
   width: 250px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .social {
+    display: flex;
+  }
+}
+
+@media (max-width: 320px) {
+  .social {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
 }
 
 div.social {
