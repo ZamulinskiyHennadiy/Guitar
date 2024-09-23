@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+
   // Слайдер для блоку guiters
   const guitersContainer = document.querySelector('.guiters');
   const nextGuitersBtn = document.querySelector('.nexti');
@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
   let guitersSlides = document.querySelectorAll('.guiters .card');
 
   function updateGuitersWidth() {
-    // Оновлення ширини картки на випадок зміни розміру екрану
     return guitersSlides[0].clientWidth;
   }
 
@@ -78,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', function () {
     slidesContainer.style.transform = `translateX(-${slidesIndex * updateSlideWidth()}px)`;
   });
-});
+
 
 let currentIndex = 0;
 const slides = document.querySelectorAll('.slidek');
