@@ -101,3 +101,11 @@ function currentSlide(index) {
 }
 
 setInterval(nextSlide, 3000);  // Автоматична зміна слайдів кожні 3 секунди
+
+
+  const hamburgerButton = document.querySelector('.hamburger-button');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburgerButton.addEventListener('click', function () {
+    navLinks.classList.toggle('show');
+  });
