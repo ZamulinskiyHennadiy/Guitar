@@ -14,7 +14,7 @@ body {
 
 @media (max-width: 768px) {
   .home {
-    width: 768px;
+    width: 100%;
   }
 }
 
@@ -206,11 +206,17 @@ header>nav>ul>li:hover {
   height: 450px;
   display: flex;
   transition: transform 0.5s ease-in-out;
-  justify-content: center;
+  padding: 20px;
+  justify-content: space-evenly;
+  gap: 210px;
 }
 
 .guiters-treck {
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 1600px;
+  padding: 70px;
 }
 
 span {
@@ -345,7 +351,6 @@ p {
 /*Partners*/
 .Parts {
   max-width: 100%;
-  padding: 40px 0;
   background-color: #F8F1EA;
   display: flex;
   flex-direction: column;
@@ -405,6 +410,9 @@ p {
   align-items: center;
   transition: transform 0.5s ease-in-out;
   gap: 20px;
+  padding: 20px;
+  justify-content: space-evenly;
+  gap: 120px;
 }
 
 .slide {
